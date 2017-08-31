@@ -1,0 +1,180 @@
+./cooker /media/shraddha/Data/muse/recipes/midasconverter.xml /media/shraddha/Data/muse/recipes/run00482.mid /media/shraddha/Data/muse/recipes/run00482.root
+Error in <TCling::RegisterModule>: cannot find dictionary module PluginDict_rdict.pcm
+Error in <TCling::RegisterModule>: cannot find dictionary module musetreeDict_rdict.pcm
+Error in <TCling::RegisterModule>: cannot find dictionary module MIDASreaderDict_rdict.pcm
+COOKERHOME: /home/shraddha
+Used seeds: 1872915386 0 490455960
+
+Init file:  init/map.xml
+/media/shraddha/Data/muse/recipes/run00482.mid /media/shraddha/Data/muse/recipes/run00482.root 0
+/media/shraddha/Data/muse/recipes/run00482.mid
+Building index map... might take a while
+Total of 200452 Events read.         
+482 2017-06-22 15:27:06.000000000Z to 2017-06-22 15:31:28.000000000Z 200452
+Creating output file:/media/shraddha/Data/muse/recipes/run00482.root................success
+
+Plugins:
+Error in <TCling::RegisterModule>: cannot find dictionary module mapperDict_rdict.pcm
+Loading: libmapper as mapper................success
+Creating factory................success
+Creating objectCalled constructor
+....with Trees:0x7421f90 0x744d6f0
+....with Files:0x1e47540 0x744c6f0
+....with Object:0x7ffdfdae8068
+................success
+
+defineHistograms:
+
+Startup:
+  mapper::startup_TRB3debug
+  mapper::startup_SciFi
+  mapper::startup_StrawTube
+  mapper::startup_V1190debug
+  mapper::startup_V1290debug
+  mapper::startup_V792debug
+  mapper::startup_MQDCdebug
+  mapper::startup_mappedchannels
+  mapper::startup_GEM
+  mapper::startup_SiPM
+  mapper::startup_MQDCdebug
+  mapper::startup_SPS
+  mapper::startup_PbGlass
+
+Execute:
+  mapper::scanTRB
+
+Post Process:
+  mapper::calibrateTRB
+
+Execute2:
+  mapper::map
+
+Finalize:
+  mapper::finalize
+Using run start time:2017-06-22T15:27:06.000000000Z Run number:482
+Init file parsing error, Severity:Fatal Error
+  File:
+  Message:unable to open primary document entity '/home/shraddha/.muse/x86_64/bin/init/map.xml'
+  at Line number:0 Column:0 Near:(unknown)
+Init File Parsing error occured... bailing out.
+
+ *** Break *** segmentation violation
+Aborted (core dumped)
+
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+#0  0x00007f81e50d907a in __GI___waitpid (pid=8184, stat_loc=stat_loc
+entry=0x7ffdfdae1ac0, options=options
+entry=0) at ../sysdeps/unix/sysv/linux/waitpid.c:29
+#1  0x00007f81e5051fbb in do_system (line=<optimized out>) at ../sysdeps/posix/system.c:148
+#2  0x00007f81e8653db4 in TUnixSystem::Exec (shellcmd=<optimized out>, this=0xaef4f0) at /home/shraddha/Documents/root-6.08.06/core/unix/src/TUnixSystem.cxx:2118
+#3  TUnixSystem::StackTrace (this=0xaef4f0) at /home/shraddha/Documents/root-6.08.06/core/unix/src/TUnixSystem.cxx:2405
+#4  0x00007f81e865641c in TUnixSystem::DispatchSignals (this=0xaef4f0, sig=kSigSegmentationViolation) at /home/shraddha/Documents/root-6.08.06/core/unix/src/TUnixSystem.cxx:3625
+#5  <signal handler called>
+#6  0x00007f81e863538c in std::_Rb_tree<void const*, std::pair<void const* const, TClass*>, std::_Select1st<std::pair<void const* const, TClass*> >, std::less<void const*>, std::allocator<std::pair<void const* const, TClass*> > >::_M_get_insert_equal_pos (__k=<optimized out>, this=0x12b8ba0) at /usr/include/c++/5/bits/stl_tree.h:1838
+#7  std::_Rb_tree<void const*, std::pair<void const* const, TClass*>, std::_Select1st<std::pair<void const* const, TClass*> >, std::less<void const*>, std::allocator<std::pair<void const* const, TClass*> > >::_M_insert_equal<std::pair<void const* const, TClass*>&> (this=0x12b8ba0, __v=...) at /usr/include/c++/5/bits/stl_tree.h:1890
+#8  0x00007f81e862717f in std::multimap<void const*, TClass*, std::less<void const*>, std::allocator<std::pair<void const* const, TClass*> > >::insert<std::pair<void const* const, TClass*>&, void> (__x=..., this=<optimized out>) at /usr/include/c++/5/bits/stl_multimap.h:529
+#9  ROOT::TMapDeclIdToTClass::Add (key=<synthetic pointer>, obj=0x7e13180, this=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:418
+#10 TClass::AddClassToDeclIdMap (id=0x1005e28, cl=cl
+entry=0x7e13180) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:481
+#11 0x00007f81de24d002 in TCling::SetClassInfo (this=<optimized out>, cl=0x7e13180, reload=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TCling.cxx:3386
+#12 0x00007f81e862aa9b in TClass::Init (this=this
+entry=0x7e13180, name=name
+entry=0x7ffdfdae49c0 "TString::Rep_t", cversion=cversion
+entry=1, typeinfo=typeinfo
+entry=0x0, isa=isa
+entry=0x0, dfil=dfil
+entry=0x0, ifil=0x0, dl=-1, il=-1, givenInfo=0x0, silent=true) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:1441
+#13 0x00007f81e86333bf in TClass::TClass (this=0x7e13180, name=0x7ffdfdae49c0 "TString::Rep_t", cversion=<optimized out>, silent=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:1137
+#14 0x00007f81de249944 in TCling::GenerateTClass (this=<optimized out>, classname=0x7ffdfdae49c0 "TString::Rep_t", emulation=<optimized out>, silent=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TCling.cxx:3729
+#15 0x00007f81e862c5b3 in TClass::GetClass (name=0x7e13091 "TString::Rep_t", load=<optimized out>, load
+entry=true, silent=silent
+entry=true) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:3062
+#16 0x00007f81e8631b99 in TBuildRealData::Inspect (this=this
+entry=0x7ffdfdae4d30, cl=cl
+entry=0x7b75750, pname=<optimized out>, mname=mname
+entry=0x7ffdfdae4c10 "fRep", add=add
+entry=0x7b725d8, isTransient=true, isTransient
+entry=false) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:822
+#17 0x00007f81de253be5 in TCling::InspectMembers (this=0xe95600, insp=..., obj=<optimized out>, cl=<optimized out>, isTransient=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TCling.cxx:2366
+#18 0x00007f81e8623bdf in TClass::CallShowMembers (this=0x7b75750, obj=0x7b725d0, insp=..., isTransient=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:2145
+#19 0x00007f81e86303e7 in TClass::BuildRealData (this=this
+entry=0x7b75750, pointer=0x7b725d0, isTransient=isTransient
+entry=false) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:2000
+#20 0x00007f81e8631ed0 in TBuildRealData::Inspect (this=this
+entry=0x7ffdfdae5090, cl=cl
+entry=0x7df1c20, pname=<optimized out>, mname=mname
+entry=0x7ffdfdae4f70 "fName", add=add
+entry=0x7b725d0, isTransient=isTransient
+entry=false) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:858
+#21 0x00007f81de253be5 in TCling::InspectMembers (this=0xe95600, insp=..., obj=<optimized out>, cl=<optimized out>, isTransient=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TCling.cxx:2366
+#22 0x00007f81e8623bdf in TClass::CallShowMembers (this=0x7df1c20, obj=0x7b725c0, insp=..., isTransient=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:2145
+#23 0x00007f81e86303e7 in TClass::BuildRealData (this=this
+entry=0x7df1c20, pointer=pointer
+entry=0x7b725c0, isTransient=isTransient
+entry=false) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:2000
+#24 0x00007f81e808970d in TBufferFile::WriteClassBuffer (this=0x7ddc780, cl=0x7df1c20, pointer=0x7b725c0) at /home/shraddha/Documents/root-6.08.06/io/io/src/TBufferFile.cxx:3929
+#25 0x00007f81e7fc5d55 in TStreamerInfo::Streamer (this=0x7b725c0/build/gdb-cXfXJ3/gdb-7.11.1/gdb/stack.c:625: internal-error: print_frame_args: Assertion `nsym != NULL' failed.
+===========================================================
+
+
+The lines below might hint at the cause of the crash.
+You may get help by asking at the ROOT forum http://root.cern.ch/forum.
+Only if you are really convinced it is a bug in ROOT then please submit a
+report at http://root.cern.ch/bugs. Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#6  0x00007f81e863538c in std::_Rb_tree<void const*, std::pair<void const* const, TClass*>, std::_Select1st<std::pair<void const* const, TClass*> >, std::less<void const*>, std::allocator<std::pair<void const* const, TClass*> > >::_M_get_insert_equal_pos (__k=<optimized out>, this=0x12b8ba0) at /usr/include/c++/5/bits/stl_tree.h:1838
+#7  std::_Rb_tree<void const*, std::pair<void const* const, TClass*>, std::_Select1st<std::pair<void const* const, TClass*> >, std::less<void const*>, std::allocator<std::pair<void const* const, TClass*> > >::_M_insert_equal<std::pair<void const* const, TClass*>&> (this=0x12b8ba0, __v=...) at /usr/include/c++/5/bits/stl_tree.h:1890
+#8  0x00007f81e862717f in std::multimap<void const*, TClass*, std::less<void const*>, std::allocator<std::pair<void const* const, TClass*> > >::insert<std::pair<void const* const, TClass*>&, void> (__x=..., this=<optimized out>) at /usr/include/c++/5/bits/stl_multimap.h:529
+#9  ROOT::TMapDeclIdToTClass::Add (key=<synthetic pointer>, obj=0x7e13180, this=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:418
+#10 TClass::AddClassToDeclIdMap (id=0x1005e28, cl=cl
+entry=0x7e13180) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:481
+#11 0x00007f81de24d002 in TCling::SetClassInfo (this=<optimized out>, cl=0x7e13180, reload=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TCling.cxx:3386
+#12 0x00007f81e862aa9b in TClass::Init (this=this
+entry=0x7e13180, name=name
+entry=0x7ffdfdae49c0 "TString::Rep_t", cversion=cversion
+entry=1, typeinfo=typeinfo
+entry=0x0, isa=isa
+entry=0x0, dfil=dfil
+entry=0x0, ifil=0x0, dl=-1, il=-1, givenInfo=0x0, silent=true) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:1441
+#13 0x00007f81e86333bf in TClass::TClass (this=0x7e13180, name=0x7ffdfdae49c0 "TString::Rep_t", cversion=<optimized out>, silent=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:1137
+#14 0x00007f81de249944 in TCling::GenerateTClass (this=<optimized out>, classname=0x7ffdfdae49c0 "TString::Rep_t", emulation=<optimized out>, silent=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TCling.cxx:3729
+#15 0x00007f81e862c5b3 in TClass::GetClass (name=0x7e13091 "TString::Rep_t", load=<optimized out>, load
+entry=true, silent=silent
+entry=true) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:3062
+#16 0x00007f81e8631b99 in TBuildRealData::Inspect (this=this
+entry=0x7ffdfdae4d30, cl=cl
+entry=0x7b75750, pname=<optimized out>, mname=mname
+entry=0x7ffdfdae4c10 "fRep", add=add
+entry=0x7b725d8, isTransient=true, isTransient
+entry=false) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:822
+#17 0x00007f81de253be5 in TCling::InspectMembers (this=0xe95600, insp=..., obj=<optimized out>, cl=<optimized out>, isTransient=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TCling.cxx:2366
+#18 0x00007f81e8623bdf in TClass::CallShowMembers (this=0x7b75750, obj=0x7b725d0, insp=..., isTransient=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:2145
+#19 0x00007f81e86303e7 in TClass::BuildRealData (this=this
+entry=0x7b75750, pointer=0x7b725d0, isTransient=isTransient
+entry=false) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:2000
+#20 0x00007f81e8631ed0 in TBuildRealData::Inspect (this=this
+entry=0x7ffdfdae5090, cl=cl
+entry=0x7df1c20, pname=<optimized out>, mname=mname
+entry=0x7ffdfdae4f70 "fName", add=add
+entry=0x7b725d0, isTransient=isTransient
+entry=false) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:858
+#21 0x00007f81de253be5 in TCling::InspectMembers (this=0xe95600, insp=..., obj=<optimized out>, cl=<optimized out>, isTransient=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TCling.cxx:2366
+#22 0x00007f81e8623bdf in TClass::CallShowMembers (this=0x7df1c20, obj=0x7b725c0, insp=..., isTransient=<optimized out>) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:2145
+#23 0x00007f81e86303e7 in TClass::BuildRealData (this=this
+entry=0x7df1c20, pointer=pointer
+entry=0x7b725c0, isTransient=isTransient
+entry=false) at /home/shraddha/Documents/root-6.08.06/core/meta/src/TClass.cxx:2000
+#24 0x00007f81e808970d in TBufferFile::WriteClassBuffer (this=0x7ddc780, cl=0x7df1c20, pointer=0x7b725c0) at /home/shraddha/Documents/root-6.08.06/io/io/src/TBufferFile.cxx:3929
+#25 0x00007f81e7fc5d55 in TStreamerInfo::Streamer (this=0x7b725c0/build/gdb-cXfXJ3/gdb-7.11.1/gdb/stack.c:625: internal-error: print_frame_args: Assertion `nsym != NULL' failed.
+===========================================================
+
+
+Segmentation fault (core dumped)
+
